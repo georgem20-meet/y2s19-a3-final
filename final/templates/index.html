@@ -13,24 +13,8 @@
 		<noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
 	</head>
 	<body >
-		{%if session['logged_in']%}
-		Hi {{session['name']}}, you are logged in.
-		{%endif%}
+	
 
-		<form action="/login" method="POST">
-		<input type="username" name="username" placeholder="Username">
-		<input type="password" name="password" placeholder="Password">
-		<input type="submit" value="Log in">
-		</form>
-
-		<form action="/signup" method="POST">
-		<input type="username" name="username" placeholder="Username">
-		<input type="password" name="password" placeholder="Password">
-		<input type="submit" value="Sign up">
-		</form>
-		<form action="/update" method="POST">
-
-		</form>
 
 		
 		<!-- Header -->
@@ -45,6 +29,22 @@
 					</ul>
 				</div>
 			</section>
+
+			
+		<form id="loginForm" action="/login" method="POST">
+		<input type="username" name="username" placeholder="Username">
+		<input type="password" name="password" placeholder="Password">
+		<input type="submit" value="Log in">
+		</form>
+
+		<form id="signupForm" action="/signup" method="POST">
+		<input type="username" name="username" placeholder="Username">
+		<input type="password" name="password" placeholder="Password">
+		<input type="submit" value="Sign up">
+		</form>
+		<form action="/update" method="POST">
+
+		</form>
 
 		<!-- One -->
 			<section id="one" class="main style1">
@@ -133,10 +133,10 @@
 						<h2>Want To Become a Member?</h2>
 					</header>
 					<p>Sign Up For Free Or Log In.</p>
-					<!-- <ul class="actions special"> -->
-						<!-- <li><a href="https://www.givingway.com/get-started.give" class="button wide primary">Sign Up</a></li> -->
-						<!-- <li><a href="https://www.givingway.com/signin.give" class="button wide">Log In</a></li> -->
-					<!-- </ul> -->
+					<ul class="actions special">
+					 <li><button id="signupButton">Sign Up</button></a></li>
+					 <li><button id="loginButton"> Log In</button></a></li> 
+					 </ul> 
 				</div>
 			</section>
 
@@ -478,6 +478,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/new.js') }}"></script>
 
 	</body>
 </html>

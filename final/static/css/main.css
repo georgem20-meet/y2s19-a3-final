@@ -6,6 +6,16 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+#signupForm{
+	display: none;
+	position: fixed;
+	z-index: 2;
+}
+#loginForm{
+	display: none;
+	position: fixed;
+	z-index: 2;
+}
 
 /* Add a black background color to the top navigation */
 .topnav {
