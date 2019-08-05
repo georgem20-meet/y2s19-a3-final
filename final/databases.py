@@ -5,14 +5,15 @@ from sqlalchemy.orm import sessionmaker
 engine = create_engine('sqlite:///lecture.db')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
-session = DBSession()
 
 def add_user(username, password):
-	user_object= User(user_name= username)
+	session = DBSession()
+	user_object= User(username= username)
 	user_object.hash_password(password)
 	session.add(user_object)
 	session.commit()
+	session.close()
 
 def get_user(username):
-    """Find the first user in the DB, by their username."""
-    return session.query(User).filter_by(username=username).first()
+	session = DBSession()
+	return session.query(User).filter_by(username=username).first()
