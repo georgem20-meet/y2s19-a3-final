@@ -10,12 +10,31 @@
 	display: none;
 	position: fixed;
 	z-index: 2;
+	left:40%;
+	top:40%;
+	background-color: lightblue;
+	border: 2px solid;
+	border-color:gray;
+	padding-top: 40px;
+	padding-right: 30px;
+	padding-left: 30px;
+
+
 }
 #loginForm{
 	display: none;
 	position: fixed;
 	z-index: 2;
+	left:40%;
+	top:40%;
+	background-color: lightblue;
+	border: 2px solid;
+	border-color:gray;
+	padding-top: 40px;
+	padding-right: 30px;
+	padding-left: 30px;
 }
+
 
 /* Add a black background color to the top navigation */
 .topnav {
