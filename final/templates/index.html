@@ -9,10 +9,30 @@
 		<title>GivingWay</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="static/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body >
+		{%if session['logged_in']%}
+		Hi {{session['name']}}, you are logged in.
+		{%endif%}
+
+		<form action="/login" method="POST">
+		<input type="username" name="username" placeholder="Username">
+		<input type="password" name="password" placeholder="Password">
+		<input type="submit" value="Log in">
+		</form>
+
+		<form action="/signup" method="POST">
+		<input type="username" name="username" placeholder="Username">
+		<input type="password" name="password" placeholder="Password">
+		<input type="submit" value="Sign up">
+		</form>
+		<form action="/update" method="POST">
+
+		</form>
+
+		
 
 		<!-- Header -->
 			<section id="header">
