@@ -2923,6 +2923,7 @@ input, select, textarea {
 		overflow: hidden;
 		position: relative;
 		text-align: center;
+		height: 100vh;
 	}
 
 		#header a {
@@ -3053,6 +3054,7 @@ input, select, textarea {
 			opacity: 1;
 			position: relative;
 			z-index: 1;
+			font-size: 15px;
 		}
 
 			#header .inner .actions {
