@@ -1,5 +1,6 @@
 from flask import session as login_session
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from databases import get_user, add_user
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'you-will-never-guess'
@@ -12,7 +13,7 @@ def login():
         login_session['logged_in'] = True
         return logged_in()
     else:
-        return home()
+        return logged_in()
 
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
@@ -20,7 +21,7 @@ def signup():
     user = get_user(request.form['username'])
     if user == None:
         add_user(request.form['username'],request.form['password'])
-    return home()
+    return logged_in()
 
 
 @app.route('/')
@@ -32,7 +33,7 @@ def logged_in():
 def logout():
     login_session['name']= None
     login_session['logged_in']= False
-    return home()
+    return logged_in()
 
 
 
