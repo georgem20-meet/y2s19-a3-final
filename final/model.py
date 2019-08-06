@@ -16,3 +16,4 @@ class User(Base):
 	def verify_password(self, password):
 		return pwd_security.verify(password, self.password_hash)
 
+#rayan was here
