@@ -29,7 +29,7 @@ def logged_in():
     return render_template(
 "index.html")
 
-@app.route('/logout')
+@app.route('/logout', methods=['POST'])
 def logout():
     login_session['name']= None
     login_session['logged_in']= False
