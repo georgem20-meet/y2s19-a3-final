@@ -13,21 +13,9 @@
 	padding-right: 30px;
 	border-color:  #424949;
 }
-<<<<<<< HEAD
 
-.containerone {
-	background-color: orange;
-	height: 700px;
-}
-
-#containeronetwo{
-	background-color: green;
-}
-#loginForm{
-=======
 #loginForm, #signupForm{
 	border-radius: 30px;
->>>>>>> b3de6e4ce877c30ef26e49ca07707cabfca598e2
 	display: none;
 	position: fixed;
 	z-index: 2;
