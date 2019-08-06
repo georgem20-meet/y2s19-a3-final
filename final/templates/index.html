@@ -31,8 +31,9 @@
 	      <li><a href="#three">Choose a Region</a></li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
-	      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      <li><button class="signupButton">Sign Up</button></a>
+			</li>
+	      <li><button class="loginButton"> Log In</button></a></li>
 	    </ul>
 	  </div>
 	</nav>
@@ -54,16 +55,30 @@
 
 		<div id="loginForm">	
 			<form  action="/login" method="POST">
-			<input type="text" name="username" placeholder="Username">
-			<input type="password" name="password" placeholder="Password">
-			<input type="submit" value="Log in">
+				<div class=close_>
+					<li>LOGIN<span class="close">x</span></li>
+				</div>
+<!-- 			<div class="modal__header">
+    			modal header
+    			<a href="#" class="js-close-modal">X</a>
+ 			</div> -->
+	 			<div class="context">
+					<input type="text" name="username" placeholder="Username">
+					<input type="password" name="password" placeholder="Password">
+					<input type="submit" value="Log in">
+				</div>
 			</form>
 		</div>
 		<div id="signupForm">
 			<form  action="/signup" method="POST">
-			<input type="text" name="username" placeholder="Username">
-			<input type="password" name="password" placeholder="Password">
-			<input type="submit" value="Sign up">
+				<div class="close_">
+					<li>SIGNUP HERE<span class="close">x</span></li>
+				</div>
+				<div class="context">
+					<input type="text" name="username" placeholder="Username">
+					<input type="password" name="password" placeholder="Password">
+					<input type="submit" value="Sign up" >
+				</div>
 			</form>
 		</div>
 		<form action="/update" method="POST">
@@ -163,8 +178,8 @@
 					</header>
 					<p>Sign Up For Free Or Log In.</p>
 					<ul class="actions special">
-					 <li><button id="signupButton">Sign Up</button></a></li>
-					 <li><button id="loginButton"> Log In</button></a></li> 
+					 <li><button class="signupButton">Sign Up</button></a></li>
+					 <li><button class="loginButton"> Log In</button></a></li> 
 					 </ul> 
 				</div>
 			</section>
@@ -508,6 +523,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/new.js') }}"></script>
+			<script>
+			var closebtns = document.getElementsByClassName("close");
+			var i;
+			var login = document.getElementById("loginForm");
+			var sign_up = document.getElementById("signupForm")
+
+			for (i = 0; i < closebtns.length; i++) {
+				closebtns[i].addEventListener("click", function() {
+				login.style.display = 'none';
+
+
+				});
+				}
+			for (i = 0; i < closebtns.length; i++) {
+				closebtns[i].addEventListener("click", function() {
+				sign_up.style.display = 'none';
+
+
+				});
+				}
+
+			</script>
 
 	</body>
 </html>
